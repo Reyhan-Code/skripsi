@@ -3,6 +3,7 @@ package com.dicoding.capstone.view.result
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.capstone.R
 import com.dicoding.capstone.databinding.ActivityResultBinding
@@ -54,8 +55,16 @@ class ResultActivity : AppCompatActivity() {
         }
 
         val resultText = when (index) {
-            in 0..9 -> "Edible"
-            in 10..19 -> "Non-Edible"
+            0 -> "Non Edible"
+            1 -> "Non Edible"
+            2 -> "Edible"
+            3 -> "Edible"
+            4 ->"Edible"
+            5 ->"Non Edible"
+            6 -> "Non Edible"
+            7 -> "Non Edible"
+            8 -> "Edible"
+            9 -> "Edible"
             else -> "unknown"
         }
 
@@ -83,12 +92,35 @@ class ResultActivity : AppCompatActivity() {
             else -> "unknown"
         }
 
+        val displayMushroomImage = when (index){
+            0 -> R.drawable.amanita_phalloides
+            1 -> "Non Edible"
+            2 -> "Edible"
+            3 -> "Edible"
+            4 ->"Edible"
+            5 ->"Non Edible"
+            6 -> "Non Edible"
+            7 -> "Non Edible"
+            8 -> "Edible"
+            9 -> "Edible"
+            else -> "unknown"
+        }
+
 
         with(binding) {
             resultToxic.text = resultText
             resultName.text = label
             resultPersentase.text = score.formatToString()
             resultDes.text = descFungus
+
+            displayMushroomImage.let {
+                resultImg.setImageResource(it as Int)
+            }
+
+            Log.d("DebugLog", "resultText: $resultText")
+            Log.d("DebugLog", "label: $label")
+            Log.d("DebugLog", "score: ${score.formatToString()}")
+            Log.d("DebugLog", "descFungus: $descFungus")
         }
     }
 

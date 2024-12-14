@@ -20,7 +20,7 @@ android {
 
 
         buildConfigField("String", "ApiKey", "\"mUSHroom223312\"")
-        buildConfigField("String", "BaseURL", "\"https://shroomscan-72txqvxpya-et.a.run.app/\"")
+        buildConfigField("String", "BaseURL", "\"http://10.0.2.2:2024/\"")
 
     }
 

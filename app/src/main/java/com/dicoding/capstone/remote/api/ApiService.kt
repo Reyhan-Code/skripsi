@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface ApiService {
     @GET("mushrooms/name")
     fun getFungus(
-        @Query("Jamur") query: String
+        @Query("jamur") query: String
     ): Call<FungusResponse>
 
     @GET("mushrooms/{id}")
